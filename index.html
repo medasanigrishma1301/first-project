@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Drunk Detection Vehicle Safety System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+
+<i class="fas fa-shield-alt"></i>
+
+Smart Vehicle Safety
+
+</div>
+
+<ul class="nav-links">
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#workflow">Workflow</a></li>
+
+<li><a href="#features">Features</a></li>
+
+<li><a href="#dashboard">Dashboard</a></li>
+
+<li><a href="#gallery">Gallery</a></li>
+
+<li><a href="#demo">Demo</a></li>
+
+<li><a href="#faq">FAQ</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section id="home" class="hero">
+
+<div class="hero-content">
+
+<h1>
+
+Smart Drunk Detection Vehicle Safety System
+
+</h1>
+
+<p>
+
+Preventing Drunk Driving with AI and Smart Sensor Technology.
+
+</p>
+
+<div class="buttons">
+
+<a href="#about" class="btn">
+
+Learn More
+
+</a>
+
+<a href="#features" class="btn secondary">
+
+View Features
+
+</a>
+
+<button onclick="testAlcohol()" class="btn">
+
+Test Alcohol Detection
+
+</button>
+
+</div>
+
+<br>
+
+<div class="hero-stats">
+
+<div>
+
+<h2 class="counter" data-target="99">0</h2>
+
+<p>Detection Accuracy %</p>
+
+</div>
+
+<div>
+
+<h2 class="counter" data-target="24">0</h2>
+
+<p>Monitoring Hours</p>
+
+</div>
+
+<div>
+
+<h2 class="counter" data-target="100">0</h2>
+
+<p>Vehicle Safety</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="car.png" alt="Smart Car">
+
+</div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="about">
+
+<h2>About The Project</h2>
+
+<p>
+
+The Smart Drunk Detection Vehicle Safety System is designed to prevent
+drunk driving accidents using an MQ-3 alcohol sensor, Artificial
+Intelligence, and an automatic engine locking mechanism.
+
+The driver blows into the sensor before starting the vehicle.
+
+The AI analyzes the alcohol level.
+
+If the detected alcohol level is above the legal limit, the engine
+remains locked and the vehicle cannot start.
+
+If the alcohol level is within the safe range, the vehicle starts
+normally.
+
+This system improves road safety, reduces accidents, and saves lives.
+
+</p>
+
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section id="workflow" class="steps">
+
+<h2>How It Works</h2>
+
+<div class="step-container">
+
+<div class="step">
+
+<i class="fas fa-car"></i>
+
+<h3>Step 1</h3>
+
+<p>
+
+Driver Attempts To Start Vehicle
+
+</p>
+
+</div>
+
+<div class="step">
+
+<i class="fas fa-wind"></i>
+
+<h3>Step 2</h3>
+
+<p>
+
+MQ-3 Alcohol Sensor Scans Driver Breath
+
+</p>
+
+</div>
+
+<div class="step">
+
+<i class="fas fa-brain"></i>
+
+<h3>Step 3</h3>
+
+<p>
+
+Artificial Intelligence Analyses Alcohol Level
+
+</p>
+
+</div>
+
+<div class="step">
+
+<i class="fas fa-lock"></i>
+
+<h3>Step 4</h3>
+
+<p>
+
+Engine Automatically Locks If Alcohol Is Detected
+
+</p>
+
+</div>
+
+<div class="step">
+
+<i class="fas fa-check-circle"></i>
+
+<h3>Step 5</h3>
+
+<p>
+
+Vehicle Starts Only If Driver Is Safe
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= LIVE DASHBOARD ================= -->
+
+<section id="dashboard">
+
+<h2>Live Driver Dashboard</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<i class="fas fa-clock"></i>
+
+<h3>Current Time</h3>
+
+<h2 id="clock">Loading...</h2>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-wine-bottle"></i>
+
+<h3>Alcohol Level</h3>
+
+<h2 id="alcoholValue">
+
+0.000 %BAC
+
+</h2>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-user-check"></i>
+
+<h3>Driver Status</h3>
+
+<h2 id="driverStatus">
+
+Waiting...
+
+</h2>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-lock"></i>
+
+<h3>Engine Status</h3>
+
+<h2 id="engineStatus">
+
+OFF
+
+</h2>
+
+</div>
+
+</div>
+
+<br>
+
+<h3>Alcohol Analysis Progress</h3>
+
+<div style="width:100%;background:#ddd;border-radius:30px;">
+
+<div id="progressBar"
+style="width:0%;height:25px;background:#2ecc71;border-radius:30px;">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FEATURES ================= -->
+
+<section id="features">
+
+    <h2>Key Features</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <i class="fas fa-wine-bottle"></i>
+            <h3>Alcohol Detection Sensor</h3>
+            <p>MQ-3 sensor detects alcohol concentration in the driver's breath.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-brain"></i>
+            <h3>AI Decision Making</h3>
+            <p>Artificial Intelligence analyzes alcohol levels and makes safety decisions.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-lock"></i>
+            <h3>Automatic Engine Lock</h3>
+            <p>Vehicle ignition remains locked when alcohol exceeds the safe limit.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-user-check"></i>
+            <h3>Real-Time Driver Status</h3>
+            <p>Displays whether the driver is safe or alcohol is detected.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-phone"></i>
+            <h3>Emergency Notification</h3>
+            <p>Automatically notifies emergency contacts when required.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-location-dot"></i>
+            <h3>GPS Tracking</h3>
+            <p>Tracks the vehicle location for emergency assistance.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-mobile-screen"></i>
+            <h3>Mobile App Integration</h3>
+            <p>Connects with Android and iOS applications.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-gauge-high"></i>
+            <h3>Fast Detection</h3>
+            <p>Instant alcohol detection before the vehicle starts.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-shield-heart"></i>
+            <h3>Reliable Operation</h3>
+            <p>Provides high accuracy and dependable performance.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-desktop"></i>
+            <h3>User Friendly Interface</h3>
+            <p>Easy to use dashboard with simple controls.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= BENEFITS ================= -->
+
+<section id="benefits">
+
+    <h2>Benefits</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <i class="fas fa-heart"></i>
+            <h3>Saves Lives</h3>
+            <p>Reduces accidents caused by drunk driving.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-road"></i>
+            <h3>Improves Road Safety</h3>
+            <p>Creates safer roads for drivers and pedestrians.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-car"></i>
+            <h3>Vehicle Protection</h3>
+            <p>Prevents unauthorized and unsafe vehicle operation.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-city"></i>
+            <h3>Smart Transportation</h3>
+            <p>Supports intelligent transportation systems.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= TECHNOLOGY ================= -->
+
+<section id="technology">
+
+    <h2>Technology Stack</h2>
+
+    <div class="tech">
+
+        <div>HTML5</div>
+
+        <div>CSS3</div>
+
+        <div>JavaScript</div>
+
+        <div>React</div>
+
+        <div>Node.js</div>
+
+        <div>Express.js</div>
+
+        <div>Artificial Intelligence</div>
+
+        <div>ESP32</div>
+
+        <div>Arduino</div>
+
+        <div>MQ-3 Alcohol Sensor</div>
+
+        <div>GPS Module</div>
+
+        <div>Firebase</div>
+
+    </div>
+
+</section>
+
+<!-- ================= FUTURE ENHANCEMENTS ================= -->
+
+<section id="future">
+
+    <h2>Future Enhancements</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <i class="fas fa-camera"></i>
+            <h3>Face Recognition</h3>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-eye"></i>
+            <h3>Drowsiness Detection</h3>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-cloud"></i>
+            <h3>Cloud Dashboard</h3>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>Mobile Notifications</h3>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-ambulance"></i>
+            <h3>Emergency Service Integration</h3>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Fleet Analytics</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery">
+
+    <h2>Project Gallery</h2>
+
+    <div class="gallery">
+
+
+        <img src="sensor.png" alt="MQ-3 Sensor">
+
+        <img src="dashboard.png" alt="Dashboard">
+
+        <img src="lock.png" alt="Engine Lock">
+
+        <img src="gps.png" alt="GPS Tracking">
+
+        <img src="drive.png" alt="Driver Breath Test">
+
+    </div>
+
+</section>
+
+<!-- ================= DEMO VIDEO ================= -->
+
+<section id="demo">
+
+    <h2>Project Demonstration</h2>
+
+    <p style="text-align:center; margin-bottom:30px;">
+        Watch the Smart Drunk Detection Vehicle Safety System demonstration.
+    </p>
+
+    <video width="100%" controls autoplay muted>
+        <source src="demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+</section>
+
+<!-- ================= FAQ ================= -->
+
+<section id="faq">
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+        <h3>How does the alcohol sensor work?</h3>
+        <p>
+            The MQ-3 Alcohol Sensor measures the alcohol concentration in the
+            driver's breath before the vehicle starts.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Can the system stop the engine while driving?</h3>
+        <p>
+            No. The system only prevents the vehicle from starting if alcohol
+            exceeds the safe limit.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Is GPS Tracking available?</h3>
+        <p>
+            Yes. GPS tracking can share the vehicle's live location during
+            emergencies.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Can it be installed in existing vehicles?</h3>
+        <p>
+            Yes. The system can be integrated into most existing vehicles with
+            compatible hardware.
+        </p>
+    </div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <h2>Contact Us</h2>
+
+    <form>
+
+        <input
+            type="text"
+            placeholder="Enter Your Name"
+            required>
+
+        <input
+            type="email"
+            placeholder="Enter Your Email"
+            required>
+
+        <input
+            type="tel"
+            placeholder="Phone Number"
+            required>
+
+        <textarea
+            placeholder="Write Your Message"
+            required></textarea>
+
+        <button type="submit">
+
+            Send Message
+
+        </button>
+
+    </form>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h2>
+
+        Smart Drunk Detection Vehicle Safety System
+
+    </h2>
+
+    <p>
+
+        Preventing Drunk Driving using AI and Smart Sensor Technology
+
+    </p>
+
+    <div class="social">
+
+        <a href="#"><i class="fab fa-facebook"></i></a>
+
+        <a href="#"><i class="fab fa-instagram"></i></a>
+
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+
+        <a href="#"><i class="fab fa-github"></i></a>
+
+        <a href="#"><i class="fas fa-envelope"></i></a>
+
+    </div>
+
+    <br>
+
+    <p>
+
+        © 2026 Smart Drunk Detection Vehicle Safety System
+
+    </p>
+
+    <p>
+
+        Developed by Grishma Chowdary
+
+    </p>
+
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
